@@ -1,0 +1,85 @@
+//Калькулятор
+#include <iostream>
+#include <iostream>
+using namespace std;
+int main()
+{
+	int val = 0, i = 1;
+	float res = 0;
+	char operation, c, esc;
+	while (i == 1)
+	{
+		i++;
+		cout << " Введите первое число" << endl;
+		cin >> res;
+		cout << "выбирите операцию (+, -, *, /)  для выхода нажмите (esc)   для очистки выбирите (c)   " << endl;
+		cin >> operation;
+		switch (operation)
+		{
+		case 'c':
+			i = 1;
+			break;
+		case 'esc':
+			i = 3;
+			break;
+		}
+		while (i == 2)
+		{
+			cout << " Введие число #2" << endl;
+			cin >> val;
+			switch (operation)
+			{
+			case '+':
+				res += val;
+				cout << "Результатом является " << res << endl;
+				break;
+			case '-':
+				res -= val;
+				cout << "Результатом является " << res << endl;
+				break;
+			case '*':
+				res *= val;
+				cout << "Результатом является  " << res << endl;
+				break;
+			case '/':
+				switch (val)
+				{
+				case 0:
+					cout << "При делении на ноль ответом является бесконечность " << endl;
+					break;
+				default:
+					res /= val;
+					cout << "Результатом является  " << res << endl;
+					break;
+				}
+				break;
+			case 'c':
+				i = 1;
+				break;
+			case 'esc':
+				i = 3;
+				break;
+			default:
+				cout << "Недопустимая операция, попытайтесь заново" << endl;
+			}
+			switch (i)
+			{
+			case 2:
+				cout << "выбирите операцию (+, -, *, /)  для выхода нажмите (esc)   для очистки выбирите (c)" << endl;
+				cin >> operation;
+				switch (operation)
+				{
+				case 'c':
+					i = 1;
+					break;
+				case 'esc':
+					i = 3;
+					break;
+				}
+			default:
+				break;
+			}
+		}
+	}
+	return 0;
+}

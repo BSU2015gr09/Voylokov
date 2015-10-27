@@ -7,11 +7,11 @@ int main()
 {
 	setlocale(LC_ALL, "Russian");
 	int a = 4096, c = 150889, m = 714025, i = 0;
-	int arr[20];
+	int arr[20];// зачем массив???
 	cout << "Введите число ";
 	cin >> arr[0];
 	cout << "1 := " << arr[0] << endl;
-	for (i = 1; i<20; i++)
+	for (i = 1; i<20; i++)// почему только 20????
 	{
 		arr[i] = (a*arr[i - 1] + c) % m;
 		cout << setw(2) << left << i + 1 << ":= " << arr[i] << endl;

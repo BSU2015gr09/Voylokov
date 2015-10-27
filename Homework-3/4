@@ -19,7 +19,7 @@ int main()
 			cin >> ch;
 			cout << endl;
 			if (ch == 'p' || ch == 'P'){
-				a = rand() % 6 + 1;
+				a = rand() % 6 + 1;//зачем аж 4 переменные?
 				b = rand() % 6 + 1;
 				c = rand() % 6 + 1;
 				d = rand() % 6 + 1;

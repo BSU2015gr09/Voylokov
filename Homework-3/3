@@ -6,7 +6,7 @@ int main()
 {
 	int val = 0, i = 1;
 	float res = 0;
-	char operation, c, esc;
+	char operation, c, esc; // что за переменные? Зачем нужны????
 	while (i == 1)
 	{
 		i++;

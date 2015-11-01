@@ -1,0 +1,17 @@
+#include <iostream>
+#include <clocale>
+using std::cout;
+using std::cin;
+int random(int n){ 
+	long int tmp = 0;
+	tmp ^= n << 13;
+	tmp ^= tmp >> 15;
+	n ^= tmp << 5;
+	return n;
+}
+int main(){ 
+	int n = 0;
+	setlocale(LC_ALL, "Russian");
+	cin >> n;
+	return 0;
+}

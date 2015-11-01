@@ -1,0 +1,103 @@
+#include <iostream>
+#include <clocale>
+using std::cin;
+using std::cout;
+using std::endl;
+int main(){
+	setlocale(LC_ALL, "Russian");
+	const int n = 6;
+	int a[n][n];
+	int m = 1;
+	// слева-направо, слева-направо,  слева-направо и т.д.:
+	cout << "\n Слева-направо, слева-направо,  слева-направо и т.д.:\n\n";
+	for (int j = 0; j < n; j++)
+	{
+		for (int l = 0; l < n; l++)
+		{
+			a[j][l] = m;
+			cout << a[j][l] << "\t";
+			m++;
+		}
+	}
+		cout << endl<<endl;
+	// справа-налево, справа-налево, справа-налево и т.д.:
+		cout << " Справа-налево, справа-налево, справа-налево и т.д.: \n\n";
+	m = 1;
+	for (int j = 0; j < n; j++)
+	{
+		for (int l = 0; l < n; l++)
+		{
+			a[j][l] = m;
+			m++;
+		}
+	}
+	for (int j = 0; j < n; j++)
+	{
+		for (int l = 0; l < n; l++)
+		{
+			cout << a[j][l] << "\t";
+		}
+		cout << endl<<endl;
+	}
+	// Стандартная змейка:
+	cout << " Стандартная змейка:\n\n";
+	m = 1;
+	for (int l = 0; l < n; l++)
+	{
+		if (l % 2 != 0)
+		{
+			for (int j = n - 1; j >= 0; j--)
+			{
+				a[j][l] = m;
+				m++;
+			}
+		}
+		else{
+			for (int j= 0; j < n; j++)
+			{
+				a[j][l] = m;
+				m++;
+			}
+		}
+	}
+	for (int j = 0; j < n; j++)
+	{
+		for (int l = 0; l < n; l++)
+		{
+			cout << a[j][l] << "\t";
+		}
+		cout << endl << endl;
+	}
+	// Плуговым письмом:
+	m = 1;
+	cout << " Плуговым письмом:\n\n";
+	for (int j = 0; j< n; j++)
+	{
+		if (j % 2 != 0)
+		{
+			for (int l = n - 1; l>= 0; l--)
+			{
+				a[j][l] = m;
+				m++;
+			}
+		}
+		else{
+			for (int l = 0; l < n; l++)
+			{
+				a[j][l] = m;
+				m++;
+			}
+		}
+	}
+	for (int j = 0; j < n; j++)
+	{
+		for (int l = 0; l < n; l++)
+		{
+			cout << a[j][l] << "\t";
+		}
+		cout << endl << endl;
+	}
+	cout << endl << endl;// по диагонали не смог 
+	cin>>m;
+	return 0;
+}

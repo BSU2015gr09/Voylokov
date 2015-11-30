@@ -5,6 +5,7 @@ using namespace std;
 int const N = 25;
 int const k=5;
 int main() {
+        setlocale(LC_ALL,"English")
 	double A[N];
 	for (int i = 0; i < N; i++) {
 		A[N] = rand();

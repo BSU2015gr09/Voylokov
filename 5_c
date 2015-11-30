@@ -1,0 +1,63 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <iomanip>
+#include <clocale>
+
+using namespace std;
+const int s=100;
+
+void gen_a (int (&a)[s],int N){
+    srand(time(0));
+    for(int i=0;i<N;i++){
+        a[i]=rand()%100 -50;
+        cout<<a[i]<<" ";
+    }
+    cout<<endl<<"_______________"<<endl;
+}
+
+void print_a (int (&a)[s],int N){
+    for(int i=0;i<N;i++)
+        cout<<arr[i]<<" ";
+    cout<<endl<<"_______________"<<endl;
+}
+
+void del_first(int a[], int &N)
+{
+	for(int i=0;i<N;i++){
+		a[i]=a[i+1];
+	}
+	N-=1;
+}
+
+void add_new(int a[],int &N,int n=0){
+cout<<"Введите число которое хотите добавить  ";
+	cin>> n;
+	cout<<endl;
+	N++;
+	a[N-1]=n;
+}
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int a[size],N;
+	cout<<"Введите количество эллементом массива  "<<endl;
+	cin>>N;
+	cout<<endl;
+	if (N <= 100){
+		gen_a(arr,N);
+		del_first(arr,N);
+		cout<<"Удаление первого элемента массива"<<endl<<"_______________"<<endl;;
+		print_a(a,N);
+		add_new(a,N);
+		cout << "Добавление нового элемента " << endl << endl;
+		print_a(a,N);
+		del_first(a,N);
+		add_new(a,N);
+		print_a(a,N);
+	}
+	else
+		cout<<"Введите число меньше 100"<<endl;
+	return 0;
+}
